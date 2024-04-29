@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import formatDate from "../../../utils/helpers/dateFormatter";
 import WeatherIcon from './weather_type';
-import sevenDaysWeatherForecast from '../../../utils/helpers/fetchWeatherForecast';
+import fiveDaysWeatherForecast from '../../../utils/helpers/fetchWeatherForecast';
 
 
 const WeatherForecast = () => {
@@ -10,7 +10,7 @@ const WeatherForecast = () => {
   useEffect(() => {
     const fetchWeatherForecast = async () => {
       try {
-        const data = await sevenDaysWeatherForecast();
+        const data = await fiveDaysWeatherForecast();
         setForecastData(data);
       } catch (error) {
         console.error('Error fetching weather forecast:', error);

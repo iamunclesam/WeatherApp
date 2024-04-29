@@ -1,18 +1,31 @@
+import getLocation from "../helpers/getCurrentLocation";
 import API_ROUTES from "../ApiRoutes";
 
-const sevenDaysWeatherForecast = async () => {
-  try {
-    const response = await fetch(
-      API_ROUTES.current_weather_data.byCityName("San Francisco")
-    );
-    if (!response.ok) {
-      throw new Error("Failed to fetch forecast data");
-    }
-    const data = await response.json();
-    return data.list; // Assuming data.list contains the forecast array
-  } catch (error) {
-    console.error("Error fetching five days weather forecast:", error);
-  }
+const fiveDaysWeatherForecast = () => {
+  const apiKey = import.meta.env.API_KEY;
+  return new Promise((resolve, reject) => {
+    // Get user's current location
+    getLocation()
+      .then(({ latitude, longitude }) => {
+        // Use latitude and longitude to fetch weather data
+        const weatherByLocationURL =
+          API_ROUTES.current_weather_data.byCoords(latitude, longitude) +
+          `&appid=${apiKey}`;
+
+        fetch(weatherByLocationURL)
+          .then((response) => response.json())
+          .then((data) => {
+            resolve(data.list);
+          })
+          .catch((error) => {
+            reject(error);
+          });
+      })
+      
+      .catch((error) => {
+        reject(error);
+      });
+  });
 };
 
-export default sevenDaysWeatherForecast;
+export default fiveDaysWeatherForecast;
