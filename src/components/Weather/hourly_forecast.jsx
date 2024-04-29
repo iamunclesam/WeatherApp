@@ -30,7 +30,7 @@ const HourlyForecast = ( ) => {
           { weatherData &&  weatherData.slice(0,4).map((hourlyData, index) => (
             <div key={index} className="flex flex-col md:items-center md:justify-center py-4 rounded">
               <div className="text-lg font-semibold">{new Date(hourlyData.dt * 1000).toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' })}</div>
-              <img src={`http://openweathermap.org/img/wn/${hourlyData.weather[0].icon}.png`} alt={hourlyData.weather[0].description} className="w-12 h-12" />
+              <img src={`https://openweathermap.org/img/wn/${hourlyData.weather[0].icon}.png`} alt={hourlyData.weather[0].description} className="w-12 h-12" />
               <div className='truncate'>{hourlyData.weather[0].description}</div>
               <div>{hourlyData.main.temp}°C</div>
             </div>

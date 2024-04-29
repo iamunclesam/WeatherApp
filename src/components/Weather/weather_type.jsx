@@ -18,7 +18,7 @@ const weatherIcon = ({ weatherType }) => {
   return (
     <img
     className='w-22 text-left'
-      src={`http://openweathermap.org/img/wn/${iconURL}`}
+      src={`https://openweathermap.org/img/wn/${iconURL}`}
       alt={`Weather icon for ${weatherType}`}
     />
   );

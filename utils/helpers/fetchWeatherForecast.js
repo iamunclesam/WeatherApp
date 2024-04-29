@@ -9,8 +9,7 @@ const fiveDaysWeatherForecast = () => {
       .then(({ latitude, longitude }) => {
         // Use latitude and longitude to fetch weather data
         const weatherByLocationURL =
-          API_ROUTES.current_weather_data.byCityName(latitude, longitude) +
-          `&appid=${apiKey}`;
+          API_ROUTES.current_weather_data.byCityName(latitude, longitude);
 
         fetch(weatherByLocationURL)
           .then((response) => response.json())

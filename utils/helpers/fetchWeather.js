@@ -9,8 +9,7 @@ const fetchWeatherByLocation = () => {
       .then(({ latitude, longitude }) => {
         // Use latitude and longitude to fetch weather data
         const weatherByLocationURL =
-          API_ROUTES.current_weather_data.byCoords(latitude, longitude) +
-          `&appid=${apiKey}`;
+          API_ROUTES.current_weather_data.byCoords(latitude, longitude) ;
 
         fetch(weatherByLocationURL)
           .then((response) => response.json())
