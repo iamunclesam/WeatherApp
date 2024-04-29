@@ -14,10 +14,10 @@ const sideBar = () => {
 
             <aside
                 id="default-sidebar"
-                className="md:fixed hidden left-5 top-10 bottom-10 z-40 w-16 mx-auto text-center transition-transform -translate-x-full sm:translate-x-0"
+                className="md:fixed md:block hidden left-5 top-5 bottom-10 z-40 w-16 mx-auto text-center transition-transform -translate-x-full sm:translate-x-0"
                 aria-label="Sidebar"
             >
-                <div className="h-full px-3 mx-auto text-center py-4 overflow-y-auto bg-blue-900 rounded-full  dark:bg-gray-800">
+                <div className="h-full px-3 mx-auto text-center py-4 overflow-y-auto bg-blue-900 rounded-lg dark:bg-gray-800">
                     <ul className="space-y-10 text-center items-center font-medium">
                         <li>
                             <a

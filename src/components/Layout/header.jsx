@@ -2,7 +2,7 @@
 const Header = () => {
     return (
     <>
-        <div className="flex justify-between items-center mb-12">
+        <div className="md:hidden flex justify-between items-center mb-12">
             <div className="add-location">
             <svg xmlns="http://www.w3.org/2000/svg" className=" text-white transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"  width="2em" height="2em" viewBox="0 0 16 16"><path fill="currentColor" fill-rule="evenodd" d="M8 1.75a.75.75 0 0 1 .75.75v4.75h4.75a.75.75 0 0 1 0 1.5H8.75v4.75a.75.75 0 0 1-1.5 0V8.75H2.5a.75.75 0 0 1 0-1.5h4.75V2.5A.75.75 0 0 1 8 1.75" clip-rule="evenodd"/></svg>
             </div>
